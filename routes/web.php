@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +44,7 @@ Route::get("/about", [AboutController::class, "about"]);
 // // Route::get("service/{id}", function ($id) {
 // //     echo "<h2>Name : </h2>" . $id;
 // // })->where("id", "[a-zA-Z]+");
+
+// Student Fill data
+
+Route::match(['get', 'post'], 'add-student', [StudentController::class, 'stuData']);
