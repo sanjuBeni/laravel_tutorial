@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MyDBController;
 use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
@@ -48,4 +49,7 @@ Route::get("/about", [AboutController::class, "about"]);
 // Student Fill data
 
 Route::match(['get', 'post'], 'add-student', [StudentController::class, 'stuData']);
+
 // Route::match(['get', 'post'], 'add-student', [StudentController::class, 'addStudent']);
+
+Route::get('/dbdata', [MyDBController::class, 'dbWork']);
