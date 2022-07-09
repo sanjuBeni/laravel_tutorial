@@ -48,3 +48,4 @@ Route::get("/about", [AboutController::class, "about"]);
 // Student Fill data
 
 Route::match(['get', 'post'], 'add-student', [StudentController::class, 'stuData']);
+// Route::match(['get', 'post'], 'add-student', [StudentController::class, 'addStudent']);
