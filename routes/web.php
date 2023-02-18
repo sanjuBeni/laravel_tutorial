@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 
@@ -27,3 +28,6 @@ Route::get('/user', [UsersController::class, 'viewLoad']);
 Route::get('/role', function () {
     return view('pages/role');
 });
+
+Route::post("/form-data", [FormDataController::class, 'formData']);
+Route::view('/stu-data', 'pages/form');
