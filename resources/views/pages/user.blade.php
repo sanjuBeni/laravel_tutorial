@@ -24,4 +24,13 @@
  echo "data"   
 @endphp
 
+{{-- if inside folder then folderName.fileName --}}
+@include('pages.inner') 
+
 <x-footer/>
+
+<script>
+    let data = @json($users);
+    // let data = $users; // direct given error
+    console.log(data);
+</script>
