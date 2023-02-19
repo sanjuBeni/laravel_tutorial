@@ -30,6 +30,9 @@ Route::get('/role', function () {
 });
 
 Route::post("/form-data", [FormDataController::class, 'formData']);
-Route::view('/stu-data', 'pages/form');
-Route::view('/home', 'pages/home');
 Route::view('/noaccess', 'pages/noaccess');
+
+Route::group(['middleware' => ['ageChecker']], function () {
+    Route::view('/stu-data', 'pages/form');
+    Route::view('/home', 'pages/home');
+});
