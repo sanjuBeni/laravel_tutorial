@@ -4,6 +4,7 @@ use App\Http\Controllers\FormDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FetchDataController;
+use App\Http\Controllers\HttpReqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,4 @@ Route::view('/stu-data', 'pages/form')->middleware('ageChecker');
 // });
 
 Route::get("/fetch", [FetchDataController::class, 'fetchData']);
+Route::get("/httpdata", [HttpReqController::class, 'index']);
