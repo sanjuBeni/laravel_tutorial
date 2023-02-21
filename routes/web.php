@@ -3,6 +3,7 @@
 use App\Http\Controllers\FormDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FetchDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,5 @@ Route::view('/stu-data', 'pages/form')->middleware('ageChecker');
 
 // Route::group(['middleware' => ['ageChecker']], function () {
 // });
+
+Route::get("/fetch", [FetchDataController::class, 'fetchData']);
