@@ -52,8 +52,18 @@ Route::get('/', function () {
 // Route::view('/user_login', 'user_data');
 
 Route::post('/user-login', [UserAuthController::class, 'index']);
-Route::view('/profile', 'profile');
-Route::view('/login', 'login');
+Route::get('/profile', function () {
+    if (session()->has('userName')) {
+        return view('profile');
+    }
+    return redirect('/login');
+});
+Route::get('/login', function () {
+    if (session()->has('userName')) {
+        return redirect('/profile');
+    }
+    return view('login');
+});
 Route::get('/logout', function () {
     if (session()->has('userName')) {
         session()->pull('userName');
