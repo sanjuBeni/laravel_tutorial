@@ -4,6 +4,7 @@ use App\Http\Controllers\FormDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FetchDataController;
+use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HttpMethodController;
 use App\Http\Controllers\HttpReqController;
 use App\Http\Controllers\UserAuthController;
@@ -72,3 +73,6 @@ Route::get('/logout', function () {
     }
     return redirect('/profile');
 });
+
+Route::view("/upload-file", 'upload');
+Route::post("/upload", [FileUploadController::class, 'index']);

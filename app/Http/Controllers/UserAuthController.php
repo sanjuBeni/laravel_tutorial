@@ -10,6 +10,7 @@ class UserAuthController extends Controller
     {
         $req->session()->put('userName', $req->input('name'));
         $req->session()->put('password', $req->input('password'));
+        $req->session()->flash('success', 'User is login');
         return redirect('/profile');
     }
 
