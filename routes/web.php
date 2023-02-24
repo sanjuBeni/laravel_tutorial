@@ -74,5 +74,9 @@ Route::get('/logout', function () {
     return redirect('/profile');
 });
 
-Route::view("/upload-file", 'upload');
+// Route::view("/upload-file", 'upload');
+Route::get("/upload-file/{lang}", function ($lang) {
+    App::setlocale($lang);
+    return view('upload');
+});
 Route::post("/upload", [FileUploadController::class, 'index']);
