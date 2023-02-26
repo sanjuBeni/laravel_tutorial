@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddMemberController;
 use App\Http\Controllers\FormDataController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
@@ -43,7 +44,7 @@ Route::get('/', function () {
 // Route::group(['middleware' => ['ageChecker']], function () {
 // });
 
-// Route::get("/fetch", [FetchDataController::class, 'fetchData']);
+Route::get("/fetch", [FetchDataController::class, 'fetchData']);
 // Route::get("/httpdata", [HttpReqController::class, 'index']);
 
 // Route::get('/login_user', [HttpMethodController::class, 'index']);
@@ -80,3 +81,8 @@ Route::get("/upload-file/{lang}", function ($lang) {
     return view('upload');
 });
 Route::post("/upload", [FileUploadController::class, 'index']);
+
+Route::view('add', 'adddata');
+Route::post('add', [AddMemberController::class, 'addMember']);
+Route::get('delete', [AddMemberController::class, 'deleteData']);
+Route::get('show', [AddMemberController::class, 'showData']);

@@ -11,6 +11,8 @@ class FetchDataController extends Controller
     public function fetchData()
     {
         // return DB::table('user')->get();
-        return Employee::all();
+        // $data = Employee::all();
+        $data = Employee::paginate(4);
+        return view('fetch', ['users' => $data]);
     }
 }
