@@ -19,4 +19,9 @@ class Employee extends Model
     {
         return $this->hasOne("App\Models\Demo");
     }
+
+    public function getDoc()
+    {
+        return $this->hasMany("App\Models\EmpDoc");
+    }
 }

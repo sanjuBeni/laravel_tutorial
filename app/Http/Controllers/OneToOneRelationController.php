@@ -10,9 +10,10 @@ class OneToOneRelationController extends Controller
 {
     public function index()
     {
-        $allData = [];
-        $allData[] = Employee::find(1)->getDemo;
-        $allData[] = Employee::find(1)->getCompany;
-        return $allData;
+        // $allData = [];
+        // $allData[] = Employee::find(1)->getDemo;
+        // $allData[] = Employee::find(1)->getCompany;
+        $manyData = Employee::find(1)->getDoc;
+        return $manyData;
     }
 }
