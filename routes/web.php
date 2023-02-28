@@ -8,6 +8,7 @@ use App\Http\Controllers\FetchDataController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HttpMethodController;
 use App\Http\Controllers\HttpReqController;
+use App\Http\Controllers\OneToOneRelationController;
 use App\Http\Controllers\UserAuthController;
 
 /*
@@ -86,3 +87,5 @@ Route::view('add', 'adddata');
 Route::post('add', [AddMemberController::class, 'addMember']);
 Route::get('delete', [AddMemberController::class, 'deleteData']);
 Route::get('show', [AddMemberController::class, 'showData']);
+
+Route::get("/one", [OneToOneRelationController::class, 'index']);

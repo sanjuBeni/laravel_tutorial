@@ -38,3 +38,12 @@ class AddMemberController extends Controller
         return redirect("/");
     }
 }
+
+// MIGRATION COMMAND
+
+// php artisan make:migration create_tblName_table
+// php artisan migrate
+// php artisan migrate:reset
+// php artisan migrate:rollback --step 3
+// php artisan migrate --path=/database/migrations/2020_09_21_141958_create_test5_table.php
+// php artisan migrate:refresh
