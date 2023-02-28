@@ -13,7 +13,8 @@ class OneToOneRelationController extends Controller
         // $allData = [];
         // $allData[] = Employee::find(1)->getDemo;
         // $allData[] = Employee::find(1)->getCompany;
-        $manyData = Employee::find(1)->getDoc;
+        $manyData[] = Employee::find(1);
+        $manyData[] = Employee::find(1)->getDoc;
         return $manyData;
     }
 }
