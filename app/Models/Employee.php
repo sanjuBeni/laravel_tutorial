@@ -16,6 +16,7 @@ class Employee extends Model
         return $this->hasOne("App\Models\Company");
     }
 
+    // Accessor
     public function getDemo()
     {
         return $this->hasOne("App\Models\Demo");
@@ -24,5 +25,11 @@ class Employee extends Model
     public function getDoc(): HasMany
     {
         return $this->hasMany("App\Models\EmpDoc")->where('img', 'sample1.png');
+    }
+
+    // Mutator
+    public function setNameAttribute($val)
+    {
+        $this->attributes['name'] = "Mr " . $val;
     }
 }
