@@ -22,6 +22,10 @@ class AddMemberController extends Controller
         $delete = Employee::where('id', $id)->delete();
         if ($delete)
             return 'Record has been deleted.';
+
+        // delete multiple record
+        //         $ids = explode(",",$id);
+        // $result = Device::whereIn('id',$ids)->delete();
     }
 
     function showData($id = 3)
